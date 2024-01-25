@@ -1,0 +1,40 @@
+```xml
+<odoo>
+    <template id="algolia_search_template" name="Algolia Search">
+        <div class="algolia-search-container">
+            <input type="text" id="algolia-search-input" class="form-control" placeholder="Search for products..."/>
+            <div id="algolia-autocomplete-dropdown" class="algolia-autocomplete-dropdown"></div>
+            <div id="algolia-search-results" class="algolia-search-results"></div>
+        </div>
+    </template>
+
+    <template id="algolia_search_result_item" name="Algolia Search Result Item">
+        <t t-call="website_sale.products_item">
+            <t t-set="product" t-value="product"/>
+            <t t-set="image" t-value="product.image"/>
+            <t t-set="description" t-value="product.description"/>
+            <t t-set="price" t-value="product.price"/>
+            <t t-set="rating" t-value="product.rating"/>
+            <t t-set="promotions" t-value="product.promotions"/>
+        </t>
+    </template>
+
+    <template id="algolia_facet_filter_item" name="Algolia Facet Filter Item">
+        <div class="form-group">
+            <label t-att-for="'facet_' + facet.id" t-esc="facet.name"/>
+            <select t-att-id="'facet_' + facet.id" class="form-control algolia-facet-filter-item" t-att-data-facet-name="facet.name">
+                <option value="">All</option>
+                <t t-foreach="facet.values" t-as="value">
+                    <option t-esc="value.name" t-att-value="value.id"/>
+                </t>
+            </select>
+        </div>
+    </template>
+
+    <template id="algolia_autocomplete_item" name="Algolia Autocomplete Item">
+        <div class="algolia-autocomplete-item">
+            <span t-esc="item._highlightResult.name.value"/>
+        </div>
+    </template>
+</odoo>
+```

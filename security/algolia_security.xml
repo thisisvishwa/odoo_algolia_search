@@ -1,0 +1,43 @@
+```xml
+<odoo>
+    <data noupdate="1">
+
+        <!-- Group for Algolia Integration User -->
+        <record id="group_algolia_integration_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="comment">Group for users who can use Algolia search features.</field>
+        </record>
+
+        <!-- Group for Algolia Integration Manager -->
+        <record id="group_algolia_integration_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="comment">Group for users who can manage Algolia integration settings.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <!-- Access Control List for Algolia Integration -->
+        <record id="access_algolia_integration_user" model="ir.model.access">
+            <field name="name">algolia.integration.access.user</field>
+            <field name="model_id" ref="model_algolia_integration"/>
+            <field name="group_id" ref="group_algolia_integration_user"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_algolia_integration_manager" model="ir.model.access">
+            <field name="name">algolia.integration.access.manager</field>
+            <field name="model_id" ref="model_algolia_integration"/>
+            <field name="group_id" ref="group_algolia_integration_manager"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+    </data>
+</odoo>
+```
