@@ -1,0 +1,99 @@
+#algolia-search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#algolia-search-results {
+    margin-top: 20px;
+}
+
+#algolia-facet-filters {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#algolia-facet-filters .algolia-facet-filter-item {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#algolia-facet-filters .algolia-facet-filter-item.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+#algolia-autocomplete-dropdown {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.algolia-autocomplete-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.algolia-autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.algolia-autocomplete-item:hover,
+.algolia-autocomplete-item:focus {
+    background-color: #f8f9fa;
+}
+
+.algolia-search-result-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.algolia-search-result-item img {
+    max-width: 100px;
+    margin-right: 15px;
+    float: left;
+}
+
+.algolia-search-result-item .product-description {
+    overflow: hidden;
+}
+
+.algolia-search-result-item .product-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.algolia-search-result-item .product-price {
+    font-size: 16px;
+    color: #28a745;
+}
+
+.algolia-search-result-item .product-rating {
+    color: #ffc107;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #algolia-facet-filters .algolia-facet-filter-item {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

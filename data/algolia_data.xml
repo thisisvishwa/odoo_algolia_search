@@ -1,0 +1,23 @@
+```xml
+<odoo>
+    <data noupdate="1">
+        <!-- Algolia Integration Configuration Parameters -->
+        <record id="algolia_config_parameters" model="ir.config_parameter">
+            <field name="key">algolia_app_id</field>
+            <field name="value" eval="'ALGOLIA_APP_ID'"/>
+        </record>
+        <record id="algolia_config_parameters" model="ir.config_parameter">
+            <field name="key">algolia_search_api_key</field>
+            <field name="value" eval="'ALGOLIA_SEARCH_API_KEY'"/>
+        </record>
+        <record id="algolia_config_parameters" model="ir.config_parameter">
+            <field name="key">algolia_admin_api_key</field>
+            <field name="value" eval="'ALGOLIA_ADMIN_API_KEY'"/>
+        </record>
+        <record id="algolia_config_parameters" model="ir.config_parameter">
+            <field name="key">odoo_algolia_index_name</field>
+            <field name="value" eval="'ODOO_ALGOLIA_INDEX_NAME'"/>
+        </record>
+    </data>
+</odoo>
+```

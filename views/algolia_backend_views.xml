@@ -1,0 +1,53 @@
+```xml
+<odoo>
+    <data>
+
+        <!-- Algolia Backend Configuration Form View -->
+        <record id="view_algolia_integration_form" model="ir.ui.view">
+            <field name="name">algolia.integration.form</field>
+            <field name="model">algolia.integration</field>
+            <field name="arch" type="xml">
+                <form string="Algolia Integration Settings">
+                    <sheet>
+                        <group string="Algolia API Settings">
+                            <field name="algolia_app_id" string="Algolia Application ID"/>
+                            <field name="algolia_search_api_key" string="Algolia Search-Only API Key"/>
+                            <field name="algolia_admin_api_key" string="Algolia Admin API Key"/>
+                        </group>
+                        <group string="Index Configuration">
+                            <field name="odoo_algolia_index_name" string="Algolia Index Name"/>
+                        </group>
+                        <group string="Search Customization">
+                            <field name="searchable_fields" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                        </group>
+                        <group string="Facet Filters">
+                            <field name="facet_filters" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Algolia Backend Configuration Action -->
+        <record id="action_algolia_integration" model="ir.actions.act_window">
+            <field name="name">Algolia Integration</field>
+            <field name="res_model">algolia.integration</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_algolia_integration_form"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Configure your Algolia account to enhance the search experience on your Odoo eCommerce website.
+                </p>
+            </field>
+        </record>
+
+        <!-- Algolia Backend Configuration Menu Item -->
+        <menuitem id="menu_algolia_integration"
+                  name="Algolia Integration"
+                  action="action_algolia_integration"
+                  parent="website.menu_website_configuration"
+                  sequence="10"/>
+
+    </data>
+</odoo>
+```
