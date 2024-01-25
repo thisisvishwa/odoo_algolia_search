@@ -1,0 +1,1 @@
+# odoo_algolia_search
